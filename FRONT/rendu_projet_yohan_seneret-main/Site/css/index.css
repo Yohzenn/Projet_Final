@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Lato", sans-serif;
+  color: white;
+}
+
+body {
+  background: url(../images/hogwart.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-evenly;
+  list-style-type: none;
+}
+
+header {
+  background-color: black;
+  padding: 15px;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.3rem;
+  transition: 0.3s;
+}
+
+nav a:hover {
+    text-decoration: underline;
+    transition: all 0.5 ease-in-out;
+  }
+
+
+
+
+.titre1 {
+  text-align: center;
+  justify-content: center;
+  margin: 30px 0px;
+}
+
+
+
+footer {
+  text-align: center;
+  background-color: black;
+  margin-top: 20px;
+  padding: 15px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+Footer p {
+  color: white;
+}
+
+@media screen and (max-width: 768px) {
+  .container-perso {
+    flex-flow: column wrap;
+    justify-content: center;
+    align-content: center;
+  }
+
+  .titre1 {
+    padding: 10px;
+    text-align: center;
+  }
+ 
+  
+  .main {
+    margin-bottom: 80px;
+  }
+}
+
+
+
+#characters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 20px;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  margin-bottom: 100px;
+
+}
+.character {
+  align-items: center;
+  margin: 10px;
+  height: 300px;
+  width: 200px;
+  /* border: solid 1px white; */
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.character h2 {
+  padding: 3px;
+
+}
+.character img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  margin-top: 10px
+}
+
+.character:hover {
+  transform: scale(1.05);
+}

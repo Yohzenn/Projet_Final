@@ -1,0 +1,62 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Lato", sans-serif;
+  color: white;
+}
+
+html, body {
+  height: 100%;
+}
+
+html {
+  background: url(../images/hogwart.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+#character {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  flex-direction: column;
+  height: 100%; 
+}
+
+.character-container {
+  display: flex;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  padding: 0 20px;
+  padding-top: 20px;
+  border-radius: 10px;
+}
+
+.character-container img {
+  object-fit: contain;
+  width: 800px;
+  height: 800px;
+}
+
+.character-container h1 {
+  margin-bottom: 20px;
+  font-size: 4rem;
+}
+
+.character-container p {
+  font-size: 2rem;
+}
+
+.character-container a {
+  text-decoration: none;
+  color: white;
+  font-size: 2rem;
+}

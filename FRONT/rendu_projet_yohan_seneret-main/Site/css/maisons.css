@@ -1,0 +1,169 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Lato", sans-serif;
+  color: white;
+}
+
+body {
+  background: url(../images/hogwart.png);  
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-evenly;
+  list-style-type: none;
+}
+
+header {
+  background-color: black;
+  padding: 15px;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.3rem;
+  transition: 0.3s;
+}
+
+
+.livre img {
+  border-radius: 10px;
+}
+.zoom:hover {
+  transform: scale(1.05);
+}
+
+.book {
+  margin-bottom: 60px;
+}
+nav a:hover {
+  text-decoration: underline;
+  transition: all 0.5 ease-in-out;
+}
+.wrapper {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.titre1 {
+  text-align: center;
+  justify-content: center;
+  margin: 30px 0px;
+}
+
+.heros {
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 1.2rem;
+  text-decoration: underline;
+}
+.main {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  height: 70%;
+  min-height: 70vh;
+}
+footer {
+  text-align: center;
+  background-color: black;
+  margin-top: 20px;
+  padding: 15px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+Footer p {
+  color: white;
+}
+.perso2 {
+  display: flex;
+  flex-flow: row-reverse;
+}
+.text {
+  width: 60%;
+  padding: 15px;
+}
+.container-perso {
+  display: flex;
+  justify-content: center;
+}
+
+.titre-maisons {
+  text-align: center;
+  padding: 10px;
+  margin-bottom: 50px;
+}
+.container-perso img {
+  width: 200px;
+}
+
+.maisons {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.maison {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  margin: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+@media screen and (max-width: 768px) {
+  .container-perso {
+    flex-flow: column wrap;
+    justify-content: center;
+    align-content: center;
+  }
+  .wrapper {
+    justify-content: center;
+    align-content: center;
+    gap: 70px;
+  }
+
+  .titre1 {
+    padding: 10px;
+    text-align: center;
+  }
+  .text > h2 {
+    text-align: center;
+  }
+  .container-perso img {
+    width: 70%;
+    object-fit: contain;
+  }
+  .main {
+    margin-bottom: 80px;
+  }
+  .titre-maisons {
+    margin-bottom: 0;
+  }
+}
+
+.border {
+  border-radius: 30px;
+}
+
+.margin-heros {
+  margin-bottom: 30px;
+}
+
+.margin-maison {
+  margin: 10px;
+}
