@@ -6,14 +6,14 @@ class AuthentificationController {
   async login(req, res) {
     try {
       const body = req.body;
-
+      console.log(body);
       const user = await prisma.user.findUnique({
         where: {
           email: body.email,
         },
       });
 
-      if (user === null) {
+      if (!user) {
         return res.status(404).send("User not found");
       }
 
@@ -28,7 +28,7 @@ class AuthentificationController {
 
       const token = generateToken(user);
 
-      return res.status(200).send(token);
+      return res.status(200).json({token});
     } catch (e) {
       return res.status(500).send({
         message: e.message,

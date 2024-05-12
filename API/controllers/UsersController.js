@@ -4,7 +4,7 @@ const { hashPassword } = require("../utils/bcrypt");
 class UsersController {
   async getMyProfile(req, res) {
     const user = req.user;
-    return res.status(200).send(user);
+    return res.status(200).json({ user });
   }
   // app.get (/users)
   async index(req, res) {

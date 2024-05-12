@@ -21,6 +21,9 @@ class AuthMiddleware {
         where: {
           email,
         },
+        select: {
+          email: true,
+        },
       });
 
       if (!user) return res.sendStatus(403);
