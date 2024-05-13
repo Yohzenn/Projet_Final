@@ -1,22 +1,16 @@
 const express = require("express");
-const UsersController = require("../controllers/UsersController");
-const AuthentificationController = require("../controllers/AuthentificationController");
-const AuthMiddleware = require("../middlewares/auth");
+const userRouter = require("./UserController.route");
+const authRouter = require("./AuthController.route");
+const boosterRouter = require("./BoosterController.route");
+const cardsRouter = require("./CardsController.route");
 
 const router = express.Router();
 
-router.get("/users", UsersController.index);
-router.post("/users", UsersController.store);
-router.get("/users/:id", UsersController.show);
-router.put("/users/:id", UsersController.update);
-router.delete("/users/:id", UsersController.destroy);
-router.get("/users/:id/house", UsersController.searchhouse);
-router.post("/login", AuthentificationController.login);
-router.get(
-  "/getMyProfile",
-  AuthMiddleware.authenticate,
-  UsersController.getMyProfile
-);
+router.use("/", userRouter);
+router.use("/", authRouter);
+router.use("/", boosterRouter);
+router.use("/", cardsRouter);
+
 module.exports = router;
 
 //* /users en GET = tous les utilisateurs

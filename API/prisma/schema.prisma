@@ -17,9 +17,11 @@ model User {
   id    Int     @id @default(autoincrement())
   email String  @unique
   name  String?
+  cards UserCard[]
   password String
   posts Post[]
   lastHouseVisited String?
+  booster String @default("0")
 }
 
 model Post {
@@ -30,3 +32,13 @@ model Post {
   author    User    @relation(fields: [authorId], references: [id])
   authorId  Int
 }
+
+model UserCard {
+  userId Int
+  cardId Int
+  quantity Int @default(1)
+  user   User @relation(fields: [userId], references: [id])
+
+  @@id([userId, cardId])
+}
+

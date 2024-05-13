@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE `user` ADD COLUMN `booster` VARCHAR(191) NOT NULL DEFAULT '0';

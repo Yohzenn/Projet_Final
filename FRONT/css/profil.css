@@ -22,7 +22,7 @@
   justify-content: space-between;
 }
 
-h2 {
+.titel {
   cursor: pointer;
   font-size: 2em;
   color: #fff;
@@ -80,8 +80,8 @@ h2 {
 section {
   background-color: lightcoral;
   width: 80%;
-  margin: auto;
-  height: 900px;
+  margin-inline: auto;
+  /* max-height: 900px; */
   padding: 40px;
   border-radius: 25px;
 }
@@ -95,15 +95,20 @@ ul {
 }
 
 .vertical-line {
-  border-left: 2px solid black; /* Définit la couleur et l'épaisseur de la ligne */
-  height: 500px; /* Définit la hauteur de la ligne */
+  width: 2px;
+  background-color: black;
 }
 
 .carre {
   display: flex;
+  min-height: 800px;
 }
 
 .left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
   width: 20%;
 }
 
@@ -141,9 +146,118 @@ ul {
 }
 
 .cardsBox {
-  background-color: lightpink;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 20px;
+  /* background-color: lightpink; */
 }
 
 .boosterBox {
   background-color: lightsalmon;
+}
+
+.boosterBtn,
+.closeBoosterWindow {
+  padding: 7px 14px;
+  border: none;
+  outline: none;
+  background-color: #121212;
+  color: #f9f9f9;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.closeBoosterWindow {
+  background-color: rgb(75, 75, 255);
+}
+
+.closeBoosterWindow:hover {
+  background-color: rgb(109, 109, 255);
+}
+
+.boosterBtn:disabled {
+  background-color: rgba(18, 18, 18, 0.2);
+  cursor: not-allowed;
+}
+
+.boosterBtn:not(:disabled):hover {
+  background-color: #393939;
+}
+
+.boosterWindow {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 40px;
+  background-color: rgba(18, 18, 18, 0.9);
+  color: #f9f9f9;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.boosterWindow > h2 {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.boosterWindow__cardsList {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.boosterWindow__cardsList__element {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 300px;
+  width: 200px;
+  padding: 10px 10px 0 10px;
+  border-radius: 10px;
+  background-color: lightcoral;
+}
+
+.boosterWindow__cardsList__element > span.cardName {
+  text-align: center;
+  text-decoration: underline;
+  margin-bottom: 5px;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.boosterWindow__cardsList__element > .boxImg {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.boosterWindow__cardsList__element > .boxImg > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cardQuantity {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: green;
+  color: #f9f9f9;
+  border-radius: 100%;
 }
