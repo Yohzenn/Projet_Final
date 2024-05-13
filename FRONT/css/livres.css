@@ -8,29 +8,102 @@
 }
 
 body {
-  background: url(../images/hogwart.png);  
+  background: url(../images/hogwart.png);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
-nav ul {
+.banner {
+  width: 100%;
+  height: 100vh;
+  background-image: url("../images/hogwart.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.navbar {
+  width: 85%;
+  margin: auto;
+  padding: 35px 0;
   display: flex;
-  justify-content: space-evenly;
-  list-style-type: none;
+  justify-content: space-between;
 }
 
-header {
-  background-color: black;
-  padding: 15px;
+h2 {
+  cursor: pointer;
+  font-size: 2em;
+  color: #fff;
 }
-nav a {
-  color: white;
+
+.navbar ul li {
+  list-style: none;
+  display: inline-block;
+  margin: 0 20px;
+  position: relative;
+}
+
+.navbar ul li a {
   text-decoration: none;
-  font-size: 1.3rem;
-  transition: 0.3s;
+  color: #fff;
+  text-transform: uppercase;
 }
 
+.navbar ul li::after {
+  content: "";
+  height: 3px;
+  width: 0;
+  background: #fff;
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  transition: 0.5s;
+}
+
+.navbar ul li:hover::after {
+  width: 100%;
+}
+
+.navbar .connect {
+  width: 130px;
+  height: 50px;
+  background: transparent;
+  border: 2px solid #fff;
+  outline: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1.1em;
+  color: #fff;
+  font-weight: 500;
+  margin-left: 40px;
+  transition: 0.5s;
+}
+
+.navbar .connect:hover {
+  background-color: #fff;
+  color: #162938;
+}
+
+
+
+
+.livres {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  margin: 0 auto;
+  width: 60%;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.livre {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  transition: transform 0.3s ease-in-out;
+}
 
 .livre img {
   border-radius: 10px;
@@ -39,13 +112,7 @@ nav a {
   transform: scale(1.05);
 }
 
-.book {
-  margin-bottom: 60px;
-}
-nav a:hover {
-  text-decoration: underline;
-  transition: all 0.5 ease-in-out;
-}
+
 .wrapper {
   display: flex;
   flex-flow: column;

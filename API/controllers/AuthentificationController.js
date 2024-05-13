@@ -6,7 +6,7 @@ class AuthentificationController {
   async login(req, res) {
     try {
       const body = req.body;
-      console.log(body);
+
       const user = await prisma.user.findUnique({
         where: {
           email: body.email,

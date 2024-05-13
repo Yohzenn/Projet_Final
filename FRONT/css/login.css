@@ -94,6 +94,7 @@ h1 {
     outline: none;
     background: transparent;
     color: #fff;
+    font-size: medium;
 }
 
 ::placeholder {
@@ -155,3 +156,4 @@ h1 {
 .icon {
     width: 10px;
 }
+

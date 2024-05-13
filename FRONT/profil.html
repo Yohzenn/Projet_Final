@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/profil.css">
+    <script>
+      if (!localStorage.getItem("token")) {
+        window.location.href = "login.html";
+      }
+    </script>
+    <title>Mon profil</title>
+  </head>
+  <body>
+    <div class="banner">
+      <div class="navbar">
+        <h2>Harry Potter</h2>
+        <ul>
+          <li><a href="index.html">Personnages</a></li>
+          <li><a href="maisons.html">Maisons</a></li>
+          <li><a href="livres.html">Livres</a></li>
+          <a href="login.html"><button class="connect" id="login">Login</button></a>
+        </ul>
+      </div>
+
+    <main>
+      
+      <section>
+        <h1 class="monCompte">Mon compte</h1>
+        <div class="carre">
+          <div class="left">
+            <ul>
+              <li><span class="navTab active" data-tab="account">Mon compte</span></li>
+              <li><span class="navTab" data-tab="cards">Mes cartes</span></li>
+              <li><span class="navTab" data-tab="booster">Settings</span></li>
+            </ul>
+          </div>
+
+          <div class="vertical-line"></div>
+
+          <div class="right">
+            <div class="accountInfos tabContent active" data-tab="account">
+              <p>Email: <span id="emailData"></span></p>
+            </div>
+            <div class="cardsBox tabContent" data-tab="cards"></div>
+            <div class="boosterBox tabContent" data-tab="booster"></div>
+          </div>
+
+        </div>
+      </section>
+        
+    </main>
+    <script src="./js/profil.js"></script>
+  </body>
+</html>

@@ -7,7 +7,6 @@ function fetchCharacter() {
 }
 
 async function displayCharacter() {
-  
   const data = await fetchCharacter();
   document.querySelector("#character").innerHTML = `  
         <div class="character-container">
@@ -22,18 +21,18 @@ async function displayCharacter() {
         </div>
 
         `;
-        try {
-            await UpdateLastHouse(1,data.house);
-            // await UpdateLastHouse(await getMyId(), data.house);
-        }catch{
-            console.log("error");
-        }
+  try {
+    await UpdateLastHouse(1, data.house);
+    // await UpdateLastHouse(await getMyId(), data.house);
+  } catch {
+    console.log("error");
+  }
 }
 
 async function getMyId() {
   const token = localStorage.getItem("token");
 
-  const response = await fetch("http://localhost:3000/getMyProfile", {
+  const response = await fetch("/getMyProfile", {
     headers: {
       Authorization: `Bearer ${token}`,
     },
@@ -46,7 +45,7 @@ async function getMyId() {
 }
 
 function UpdateLastHouse(id, house) {
-  let baseUrl = "http://localhost:3000/users/" + id;
+  let baseUrl = "/users/" + id;
   console.log(id);
   console.log(house);
   return fetch(baseUrl, {
@@ -61,6 +60,3 @@ function UpdateLastHouse(id, house) {
 }
 
 displayCharacter();
-
-
-
