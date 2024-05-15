@@ -12,20 +12,49 @@
       <div class="navbar">
         <h2>Harry Potter</h2>
         <ul>
+          <li ><a href="index.html" class="hideOnMobile">Personnages</a></li>
+          <li ><a href="maisons.html" class="hideOnMobile">Maisons</a></li>
+          <li ><a href="livres.html" class="hideOnMobile">Livres</a></li>
+          <a href="login.html" class="hideOnMobile"><button class="connect" id="login">Login</button></a>
+          <a href="#" onclick=showSidebar() class="showOnMobile"><svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px" fill="#e8eaed"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a>
+        </ul>
+      </div>
+
+      <nav>
+        <ul class="sidebar">
+          <!-- <h2>Harry Potter</h2> -->
+          <li><a onclick=hideSidebar() class="closeNav"><svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px" fill="#e8eaed"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
           <li><a href="index.html">Personnages</a></li>
           <li><a href="maisons.html">Maisons</a></li>
           <li><a href="livres.html">Livres</a></li>
-          <a href="login.html"><button class="connect" id="login">Login</button></a>
+          <li><a href="login.html">Login</a></li>
         </ul>
-      </div>
+      </nav>
 
     <main>
       <section>
         <h1 class="titre1">Bienvenue sur le site des fans d'Harry Potter</h1>
     
       </section>
+      
+      <section class="optionsBox">
 
-      <div id="characters"></div>
+        <div class="filtersBox">
+          <button class="filterBtn active" data-house="all">All</button>
+          <button class="filterBtn" data-house="gryffindor">Gryffindor</button>
+          <button class="filterBtn" data-house="slytherin">Slytherin</button>
+          <button class="filterBtn" data-house="ravenclaw">Ravenclaw</button>
+          <button class="filterBtn" data-house="hufflepuff">Hufflepuff</button>
+        </div>
+
+      <div class="search">
+          <input type="text" placeholder="Rechercher..." id="searchBar">
+      </div>
+      </section>
+
+      <div id="characters">
+        <span class="boxError">No cards found.</span>
+      </div>
     </main>
     <footer>
       <p>&copy; 2023 Harry Potter Fan Site. Tous droits réservés.</p>
