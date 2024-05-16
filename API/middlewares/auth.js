@@ -12,7 +12,7 @@ class AuthMiddleware {
 
     // On vérifie le token grâce au Token secret
     jsonwebtoken.verify(token, process.env.JWT_SECRET, async (err, payload) => {
-      console.log(err);
+      if (err) console.log(err);
 
       // Si y'a erreur, renvoie 403.
       if (err) return res.sendStatus(403);

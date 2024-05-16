@@ -3,6 +3,14 @@ let allCards;
 const boosterBtn = document.getElementById("boosterBtn");
 const cardsBox = document.querySelector(".cardsBox");
 
+document.addEventListener("DOMContentLoaded", () => {
+  const token = localStorage.getItem("token");
+  if (token) {
+    const loginButton = document.getElementById("login");
+    loginButton.textContent = "Mon compte";
+  }
+});
+
 // Event delegation
 document.addEventListener("click", (e) => {
   // On récupère la target clické
@@ -40,7 +48,7 @@ boosterBtn.addEventListener("click", async () => {
     const cardsNumber = 5;
     // Je crée 5 id aléatoires que j'ajoute dans cardsId
     for (let i = 0; i < cardsNumber; i++) {
-      cardsId.push(Math.floor(Math.random() * allCards.length));
+      cardsId.push(allCards[Math.floor(Math.random() * allCards.length)].id);
     }
 
     // J'effectue la requête de l'ouverture du booster
@@ -137,14 +145,18 @@ function createBoosterWindow(cardsId) {
   cardsList.classList.add("boosterWindow__cardsList");
 
   // Pour chaque carte piochée dans le booster
-  cardsId.forEach((card) => {
+  cardsId.forEach((card, i) => {
     // Creer la carte
+    const cardFromArray = allCards.find((cardEl) => cardEl.id === card);
+    console.log(cardFromArray);
+
     const cardEl = document.createElement("div");
     cardEl.classList.add("boosterWindow__cardsList__element");
+    cardEl.style.setProperty("--index", i);
     cardEl.innerHTML = `
-        <span class="cardName">${allCards[card].name}</span>
+        <span class="cardName">${cardFromArray.name}</span>
         <div class="boxImg">
-          <img src="${allCards[card].image}" alt="Image de ${allCards[card].name}">
+          <img src="${cardFromArray.image}" alt="Image de ${cardFromArray.name}">
         </div>
     `;
 
@@ -182,7 +194,7 @@ function displayUserCards(cards) {
   let numberOfCards = 0;
 
   // Pour chaque carte dans cards
-  cards.forEach((card) => {
+  cards.forEach((card, i) => {
     // On récupère la carte correspondant à celle qui possède le même id que card.cardId
     const cardData = allCards.find((el) => el.id === card.cardId);
 
@@ -209,16 +221,9 @@ function displayUserCards(cards) {
     if (userData) updateProfil(userData);
     allCards = await getAllCards();
     const usersCards = await getUserCards();
+    console.log(usersCards);
     displayUserCards(usersCards);
   } catch (error) {
     alert(error.message);
   }
 })();
-
-document.addEventListener("DOMContentLoaded", () => {
-  const token = localStorage.getItem("token");
-  if (token) {
-    const loginButton = document.getElementById("login");
-    loginButton.textContent = "Mon compte";
-  }
-});

@@ -221,6 +221,8 @@ ul {
 }
 
 .boosterWindow__cardsList__element {
+  opacity: 0;
+  transform: translateY(-40px);
   position: relative;
   display: flex;
   flex-direction: column;
@@ -230,8 +232,16 @@ ul {
   width: 200px;
   padding: 10px 10px 0 10px;
   border-radius: 10px;
-  /* background-color: lightcoral; */
   border: 1px solid #f9f9f9;
+  animation: cardAnimation 0.7s ease-in-out forwards;
+  animation-delay: calc(var(--index) * 200ms);
+}
+
+@keyframes cardAnimation {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .boosterWindow__cardsList__element > span.cardName {
