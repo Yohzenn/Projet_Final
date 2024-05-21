@@ -63,6 +63,7 @@ nav h2:first-child {
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
+  height: 100%;
 }
 
 .sidebar li {
@@ -87,7 +88,7 @@ nav h2:first-child {
 @media (max-width: 400px) {
   .sidebar {
     width: 100%;
-    text-align: center;
+    height: 100%;
   }
 }
 
@@ -105,12 +106,17 @@ nav h2:first-child {
 } */
 
 .navbar {
-  width: 85%;
+  width: 100%;
   margin: auto;
-  padding: 35px 0;
+  padding: 35px 15px;
   display: flex;
   justify-content: space-between;
+  background-color: #12121293;
+  backdrop-filter: blur(10px);
+  /* border-radius: 25px; */
 }
+
+
 
 h2 {
   cursor: pointer;
@@ -170,6 +176,7 @@ h2 {
   text-align: center;
   justify-content: center;
   margin: 30px 0px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5)
 }
 
 footer {

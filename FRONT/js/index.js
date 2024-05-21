@@ -24,9 +24,12 @@ document.addEventListener("click", (e) => {
   const target = e.target;
 
   if (target.matches(".filterBtn")) {
+    //Récupère l'attribut data-house
     const filter = target.getAttribute("data-house");
+
     const isActive = document.querySelector(".filterBtn.active");
 
+    // ne pas refaire tourner la fonction
     if (isActive && isActive !== target) {
       isActive.classList.remove("active");
       target.classList.add("active");
@@ -47,6 +50,7 @@ document.addEventListener("click", (e) => {
       // On montre que les cartes filtrées
       document
         .querySelectorAll(`.cardElement[data-house="${filter}"]`)
+        // `` permet d'ajouter une variable dedans
         .forEach((cardFiltered) => {
           cardFiltered.classList.remove("hidden");
         });
@@ -76,7 +80,7 @@ searchBar.addEventListener("input", (e) => {
     filteredArray.forEach((element) => {
       document
         .querySelector(`.cardElement[data-name="${element.name}"]`)
-        .classList.remove("hidden");
+        .classList.remove("hidden");  
     });
 
     console.log(filteredArray);
